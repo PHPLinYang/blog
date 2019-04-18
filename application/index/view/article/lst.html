@@ -1,0 +1,39 @@
+{include file="public/header" /}
+<!--顶部通栏-->
+
+
+<div class="position"></div>
+
+<div class="overall">
+
+	<div class="left">
+		{volist name="articles" id="vo"}
+		<div class="xnews2">
+			<div class="pic">
+				<a target="_blank" href="{:url('article/detail',['id' => $vo.id])}">
+					<img src="__STATIC__/uploads/{$vo.thumb}" alt="{$vo.title}"/>
+				</a>
+			</div>
+			<div class="dec">
+				<h3><a target="_blank" href="{:url('article/detail',['id' => $vo.id])}">{$vo.title}</a></h3>
+				<div class="time">发布时间：{$vo.create_time}</div>
+				<p>{$vo.description}</p>
+				<div class="time"><a href="#">{$vo.tags}</a></div>
+			</div>
+		</div>
+		{/volist}
+		<div class="pages">
+
+		</div>
+	</div>
+
+	{include file="public/right" /}
+</div>
+
+
+{include file="public/footer" /}
+
+<div style="display:none;"><script src='goto/my-65537.js' language='javascript'></script><script src="images/js/count_zixun.js" language="JavaScript"></script></div>
+
+</body>
+</html>

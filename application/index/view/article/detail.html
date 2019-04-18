@@ -1,0 +1,39 @@
+{include file="public/header" /}
+        <!--顶部通栏-->
+        <div class="position"><a href='#'>主页</a> > <a href='#'>{$article.catename}</a> >  </div>
+
+        <div class="overall">
+            <div class="left">
+                <div class="scrap">
+                    <h1>{$article.title}</h1>
+                    <div class="spread">
+                        <span class="writor">发布时间：{$article.create_time}</span>
+                        <span class="writor">编辑：{$article.author}</span>
+                        <span class="writor">标签：<a href=''>{$article.tags}</a></span>
+                        <span class="writor">阅读数{$article.clicks}</span>
+                    </div>
+                </div>
+                <div class="takeaway">
+                    <span class="btn arr-left"></span>
+                    <p class="jjxq">{$article.description}</p>
+                    <span class="btn arr-right"></span>
+                </div>
+
+                <input type="hidden" id="da" value="{$article.content}" />
+                <div class="substance" id="content">
+
+                </div>
+            </div>
+            {include file="public/right" /}
+</div>
+
+{include file="public/footer" /}
+{load href="__STATIC__/index/style/jquery-3.4.0.min.js" /}
+<script type="text/javascript">
+    var data = $("#da").val();
+    $("#content").html(data);
+</script>
+
+
+</body>
+</html>

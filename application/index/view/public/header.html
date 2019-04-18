@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{$title|default="Blog"}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Blog" />
+    <meta name="description" content="Blog" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <link href="__STATIC__/index/style/lady.css" type="text/css" rel="stylesheet" />
+    <script type='text/javascript' src='__STATIC__/index/style/ismobile.js'></script>
+</head>
+
+<body>
+
+<div class="ladytop">
+    <div class="nav">
+        <div class="left">
+            <a href="">
+                <img src="__STATIC__/index/images/hunshang.png" alt="ThinkPHP5博客项目">
+            </a>
+        </div>
+        <div class="right">
+            <div class="box">
+                <a href="{:url('index/index')}">首页</a>
+                {volist name="cates" id="cates"}
+                <a href="{:url('article/lst',['cate_id' => $cates.id])}" title="{$cates.catename}">{$cates.catename}</a>
+                {/volist}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hotmenu">
+    <div class="con">
+        热门标签：<a href='#'>奇闻趣事</a>
+    </div>
+</div>

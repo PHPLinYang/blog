@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="" enctype="multipart/form-data">
+        <input type="file" name="excel" />
+        <input type="submit" value="导入" />
+    </form>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>电话</th>
+            <th>邮箱</th>
+        </tr>
+    </thead>
+    <tbody>
+        {volist name="excels" id="vo"}
+        <tr>
+            <td>{$vo.id}</td>
+            <td>{$vo.username}</td>
+            <td>{$vo.age}</td>
+            <td>{$vo.sex}</td>
+            <td>{$vo.phone}</td>
+            <td>{$vo.email}</td>
+        </tr>
+        {/volist}
+    </tbody>
+</table>
+</body>
+</html>
