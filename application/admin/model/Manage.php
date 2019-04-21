@@ -28,6 +28,5 @@ class Manage extends Model
         }else{
             return['code' => 0,'msg' => '新增失败！'];
         }
-
     }
 }

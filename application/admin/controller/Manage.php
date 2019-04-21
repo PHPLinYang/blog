@@ -155,11 +155,8 @@ class Manage extends Base
     //信息导出为EXCEL
     public function outxls()
     {
-        $data = Db::name('manage')->field('id,username,phone,email,create_time')->select();
-        foreach ($data as $v){
-            $v['create_time'] = date('Y-m-d H:i:s',$v['create_time']);
-        }
-        halt($v);
-        out_xls($v,'管理员');
+        $data = Db::name('manage')->field('id,username,phone,email')->select();
+
+        out_xls($data,'管理员');
     }
 }

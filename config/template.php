@@ -34,6 +34,6 @@ return [
     'taglib_end'   => '}',
 
     'tpl_replace_string'  =>  [
-        '__STATIC__'=>'http://localhost/blog/public/static',
+        '__STATIC__'=>'http://127.0.0.1/blog/public/static',
     ]
 ];
