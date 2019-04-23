@@ -17,7 +17,7 @@ class Base extends Controller
             $this->error('请先登录！','login/login');
         }
         //权限验证
-        $this->auth();
+        //$this->auth();
     }
 
     protected function auth()

@@ -36,7 +36,7 @@
                                 {volist name="cates" id="vo"}
                                 <tr>
                                     <td align="center">{$vo.id}</td>
-                                    <td align="center"><input type="text" value="{$vo.list_order}" style="width: 30px;text-align: center;" /></td>
+                                    <td align="center"><input type="text" value="{$vo.list_order}" class="list_order" attr_id="{$vo.id}" style="width: 30px;text-align: center;" /></td>
                                     <td align="center">{$vo.catename}</td>
                                     <td align="center">
                                         {if condition="$vo.status eq 1"}
@@ -71,4 +71,32 @@
     </div>
     <!-- /Page Body -->
 </div>
+{/block}
+
+{block name="js"}
+<script>
+    $(function (){
+        var url = "{:url('category/sort')}";
+        $('.list_order').blur(function () {
+            var postData = {
+                'id' : $(this).attr('attr_id'),
+                'list_order' : $(this).val()
+            };
+            $.ajax({
+                'type' : 'POST',
+                'url' : url,
+                'data' : postData,
+                'dataType' : 'json',
+                'success' : function (result){
+                    if(result.code == 1){
+                        alert(result.msg);
+                        location.href = result.data;
+                    }else{
+                        alert(result.msg);
+                    }
+                }
+            });
+        });
+    });
+</script>
 {/block}

@@ -26,25 +26,15 @@
                                 <thead class="">
                                 <tr>
                                     <th class="text-center">ID</th>
-                                    <th class="text-center">管理员名称</th>
-                                    <th class="text-center">手机号</th>
-                                    <th class="text-center">邮箱</th>
-                                    <th class="text-center">状态</th>
+                                    <th class="text-center">角色名称</th>
                                     <th class="text-center">操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-
+                                {volist name="roles" id="vo"}
                                 <tr>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="center">
-
-                                        <a class='btn btn-warning btn-sm shiny'>待审</a>
-
-                                    </td>
+                                    <td align="center">{$vo.id}</td>
+                                    <td align="center">{$vo.title}</td>
                                     <td align="center">
                                         <a href="{:url('manage/edit',['id' => 1])}" class="btn btn-primary btn-sm shiny">
                                             <i class="fa fa-edit"></i> 编辑
@@ -54,11 +44,11 @@
                                         </a>
                                     </td>
                                 </tr>
-
+                                {/volist}
                                 </tbody>
                             </table>
-                            <div class="list_order">
-                                123
+                            <div class="list_order" style="text-align: right;">
+                                {$roles|raw}
                             </div>
                         </div>
                         <div>

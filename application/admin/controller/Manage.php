@@ -15,7 +15,9 @@ class Manage extends Base
     public function lst()
     {
         //获取管理员信息
-        $manages = model('Manage')->paginate();
+        $manages = model('Manage')->where('status','>',0)
+            ->field('id,username,phone,email,status')
+            ->paginate();
 
         $this->assign('manages',$manages);
         return $this->fetch();
@@ -114,14 +116,27 @@ class Manage extends Base
     {
         return $this->fetch();
     }
-    public function auth_rule_del()
+    public function auth_rule_del($id)
     {
-
+        if(empty($id) || !is_numeric($id)){
+            $this->error('参数错误！');
+        }
+        if(Db::name('auth_rule')->delete($id)){
+            $this->error('删除成功！','manage/auth_rule_lst');
+        }else{
+            $this->error('删除失败！');
+        }
     }
+
 
     //AUTH用户组
     public function auth_group_lst()
     {
+        //获取角色数据
+        $roles = Db::name('auth_group')
+            ->where('status',1)
+            ->paginate();
+        $this->assign('roles',$roles);
         return $this->fetch();
     }
     public function auth_group_add()

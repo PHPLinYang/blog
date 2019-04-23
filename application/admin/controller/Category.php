@@ -86,4 +86,20 @@ class Category extends Base
             $this->error("删除失败！");
         }
     }
+
+    //排序
+    public function sort()
+    {
+        $data = input('post.');
+        if(empty($data['id']) || empty($data['list_order']) || !is_numeric($data['list_order'])){
+            return ['code' => 0,'msg' => '参数不合法！'];
+        }
+        //更新数据库
+        $res = Db::name('category')->where('id',$data['id'])->update(['list_order' => $data['list_order']]);
+        if($res){
+            return $this->result($_SERVER['HTTP_REFERER'],1,'排序成功！');
+        }else{
+            return $this->result($_SERVER['HTTP_REFERER'],0,'排序失败');
+        }
+    }
 }
