@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： 127.0.0.1
--- 生成日期： 2019-04-21 02:57:30
+-- 生成日期： 2019-05-01 05:39:35
 -- 服务器版本： 10.1.36-MariaDB
 -- PHP 版本： 7.2.11
 
@@ -94,7 +94,8 @@ CREATE TABLE `blog_auth_group_access` (
 
 INSERT INTO `blog_auth_group_access` (`uid`, `group_id`) VALUES
 (1, 1),
-(2, 2);
+(2, 2),
+(3, 1);
 
 -- --------------------------------------------------------
 
@@ -138,8 +139,7 @@ INSERT INTO `blog_auth_rule` (`id`, `name`, `title`, `type`, `status`, `conditio
 (20, 'admin/article/add', '文章添加', 1, 1, ''),
 (21, 'admin/article/edit', '文章编辑', 1, 1, ''),
 (22, 'admin/article/del', '文章删除', 1, 1, ''),
-(23, 'admin/index/logout', '后台退出', 1, 1, ''),
-(24, 'admin/manage/outxls', '管理员导出', 1, 1, '');
+(23, 'admin/index/logout', '后台退出', 1, 1, '');
 
 -- --------------------------------------------------------
 
@@ -162,9 +162,9 @@ CREATE TABLE `blog_category` (
 
 INSERT INTO `blog_category` (`id`, `catename`, `list_order`, `status`, `create_time`, `update_time`) VALUES
 (1, 'PHP', 0, 1, 1555553983, 0),
-(2, 'Linux', 0, 1, 1555553996, 0),
-(3, 'MySQL', 0, 1, 1555554005, 1555554016),
-(4, 'Apache', 0, 1, 1555554028, 0);
+(2, 'Linux', 2, 1, 1555553996, 0),
+(3, 'MySQL', 3, 1, 1555554005, 1555554016),
+(4, 'Apache', 5, 1, 1555554028, 0);
 
 -- --------------------------------------------------------
 
@@ -247,7 +247,9 @@ CREATE TABLE `blog_manage` (
 --
 
 INSERT INTO `blog_manage` (`id`, `username`, `password`, `pic`, `phone`, `email`, `status`, `create_time`, `update_time`) VALUES
-(1, 'admin', '0d1ab73c1e5e0268807784113cf613b5', '20190418\\063bd0382493cb7483f6ad46a4128ce8.jpg', '18213149026', '844022818@qq.com', 2, 1555560524, 1555560524);
+(1, 'admin', '0d1ab73c1e5e0268807784113cf613b5', '20190418\\063bd0382493cb7483f6ad46a4128ce8.jpg', '18213149026', '844022818@qq.com', 1, 1555560524, 1555560524),
+(2, 'root', '737f172677c81d189f940f04e3275621', '20190423\\b561d76cf015194ac27ac36c56ebf0d9.jpg', '18213149026', '844022818@qq.com', 2, 1555989705, 1555989705),
+(3, 'admin123', 'a8d867dc03c3c04c1ff413e21a6bc88f', '20190423\\414361958e8a926f6eae741a4ad75fb1.jpg', '18213149026', '844022818@qq.com', 2, 1555990492, 1555990492);
 
 --
 -- 转储表的索引
@@ -324,7 +326,7 @@ ALTER TABLE `blog_auth_group`
 -- 使用表AUTO_INCREMENT `blog_auth_rule`
 --
 ALTER TABLE `blog_auth_rule`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- 使用表AUTO_INCREMENT `blog_category`
@@ -348,7 +350,7 @@ ALTER TABLE `blog_grade`
 -- 使用表AUTO_INCREMENT `blog_manage`
 --
 ALTER TABLE `blog_manage`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

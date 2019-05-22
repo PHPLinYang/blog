@@ -12,7 +12,7 @@ use think\Validate;
 class Category extends Validate
 {
     protected $rule = [
-        'catename|分类名称' => 'require|length:1,20|unique:category',
+        'catename|分类名称' => 'require|length:1,20|token|unique:category',
     ];
     protected $message  =   [
 

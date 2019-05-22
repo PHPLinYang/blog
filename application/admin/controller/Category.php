@@ -32,7 +32,7 @@ class Category extends Base
             }
             $data['create_time'] = time();
             //写入数据库
-            if(Db::name('category')->insert($data)){
+            if(Db::name('category')->field('catename')->insert($data)){
                 $this->success('新增成功！','category/lst');
             }else{
                 $this->error('新增失败！');

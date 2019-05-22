@@ -20,6 +20,7 @@ class ComposerStaticInit84a835c41a8022d8f6c4b304849387d4
             'think\\composer\\' => 15,
             'think\\captcha\\' => 14,
             'think\\auth\\' => 11,
+            'think\\' => 6,
         ),
         'a' => 
         array (
@@ -43,6 +44,10 @@ class ComposerStaticInit84a835c41a8022d8f6c4b304849387d4
         'think\\auth\\' => 
         array (
             0 => __DIR__ . '/..' . '/5ini99/think-auth/src',
+        ),
+        'think\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-image/src',
         ),
         'app\\' => 
         array (
